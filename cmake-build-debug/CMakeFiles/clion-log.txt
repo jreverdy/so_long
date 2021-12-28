@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /Users/jereverd/CLionProjects/so_long Select CMakeLists.txt
