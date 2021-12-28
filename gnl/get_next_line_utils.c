@@ -46,8 +46,8 @@ char	*gnl_strjoin(char *s1, char *s2, size_t i, size_t j)
 
 	if (s1 == NULL && !s2)
 		return (NULL);
-	len_s1 = gnl_strlen((char *)s1);
-	len_s2 = gnl_strlen((char *)s2);
+	len_s1 = gnl_strlen(s1);
+	len_s2 = gnl_strlen(s2);
 	str = malloc((len_s1 + len_s2 + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
@@ -55,8 +55,6 @@ char	*gnl_strjoin(char *s1, char *s2, size_t i, size_t j)
 		str[i] = s1[i];
 	while ((s2[j] != '\n') && (j < len_s2))
 		str[i++] = s2[j++];
-	if (s2 && s2[j] == '\n')
-		str[i++] = s2[j];
 	str[i] = '\0';
 	free(s1);
 	return (str);

@@ -17,13 +17,22 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <unistd.h>
+# include "../libft/libft.h"
+# include "../gnl/get_next_line.h"
+# include <fcntl.h>
+# include <limits.h>
+#define BUFFER_SIZE 1
 
 typedef struct s_map
 {
 	char	**map;
+	int		x;
 	int 	y;
+	int 	collect;
+	int 	player;
+	int 	exit;
 }				t_map;
 
-size_t	ft_strlen(char *str);
+char	*get_next_line(int fd);
 
 #endif //SO_LONG_H
