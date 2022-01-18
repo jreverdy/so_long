@@ -81,7 +81,7 @@ typedef struct s_all
 	t_image	*img;
 }t_all;
 
-int		ft_parsing(char *ber, t_map *map_info);
+int		ft_parsing(char *ber, t_all *a);
 int		check_map_char_number(t_map *map_info);
 int 	check_string(char *str, int side, t_map *map_info);
 

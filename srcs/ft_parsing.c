@@ -114,7 +114,7 @@ int	check_map_char(char *ber, t_map *map_info)
 	return (1);
 }
 
-int	get_map_values(char *ber, t_map *map_info)
+int	get_map_values(char *ber, t_all *a)
 {
 	int		fd;
 	char	*str;
@@ -129,13 +129,13 @@ int	get_map_values(char *ber, t_map *map_info)
 	{
 		if (save == -1)
 			save = ft_strlen(str);
-		map_info->x = ft_strlen(str);
-		if (map_info->x != save)
+		a->m->x = ft_strlen(str);
+		if (a->m->x != save)
 		{
 			free(str);
 			return (0);
 		}
-		map_info->y++;
+		a->m->y++;
 		free(str);
 		str = get_next_line(fd);
 		if (!str)
@@ -157,15 +157,15 @@ void	init_struct(t_all *a)
 	a->g->win = NULL;
 }
 
-int	ft_parsing(char *ber, t_map *map_info)
+int	ft_parsing(char *ber, t_all *a)
 {
-//	init_struct(a, map_info);
-	if (!get_map_values(ber, map_info))
-		ft_print_error_msg(map_info, 2);
-	else if (!check_map_char(ber, map_info))
-		ft_print_error_msg(map_info, 3);
-	else if (!init_map(ber, map_info))
-		ft_print_error_msg(map_info, 4);
+	init_struct(a);
+	if (!get_map_values(ber, a))
+		ft_print_error_msg(a->m, 2);
+	else if (!check_map_char(ber, a->m))
+		ft_print_error_msg(a->m, 3);
+	else if (!init_map(ber, a->m))
+		ft_print_error_msg(a->m, 4);
 	return (0);
 }
 

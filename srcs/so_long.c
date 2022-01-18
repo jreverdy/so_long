@@ -65,15 +65,15 @@ int	main(int ac, char **av)
 	t_image	img;
 	t_all	a;
 
+	a.m = &map_info;
+	a.img = &img;
+	a.g = &g;
 	if (ft_invalid_arg(ac, av[1]) == 0)
 	{
 		ft_print_error_msg(&map_info, 0);
 		return (0);
 	}
-	ft_parsing(av[1], &map_info);
-	a.m = &map_info;
-	a.img = &img;
-	a.g = &g;
+	ft_parsing(av[1], &a);
 	g.mlx = mlx_init();
 	g.win = mlx_new_window(g.mlx, a.m->x * 32, a.m->y * 32, "so_long");
 	init_image(&g, a.img);
