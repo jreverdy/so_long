@@ -12,11 +12,11 @@
 
 #include "../incs/so_long.h"
 
-int 	init_map(char *ber, t_map *map_info)
+int	init_map(char *ber, t_map *map_info)
 {
 	int		fd;
 	char	*str;
-	int 	i;
+	int		i;
 
 	i = 0;
 	map_info->map = ft_calloc(sizeof(char **), map_info->y + 1);
@@ -37,16 +37,16 @@ int 	init_map(char *ber, t_map *map_info)
 
 void	count_params(char c, t_map **map_info)
 {
-
 	if (c == 'P')
-		(*map_info)->player++;
+		(*map_info)->playernb++;
 	if (c == 'E')
 		(*map_info)->exit++;
 	if (c == 'C')
-		(*map_info)->collect++;
+		(*map_info)->collectnb++;
 }
 
-int check_string(char *str, int side, t_map *map_info)
+
+int	check_string(char *str, int side, t_map *map_info)
 {
 	int	i;
 
@@ -60,19 +60,25 @@ int check_string(char *str, int side, t_map *map_info)
 			if (str[i] != '1')
 				return (0);
 		}
-		else if (str[i] != '1' && str[i] != '0' && str[i] != 'P' && str[i] != 'E' && str[i] != 'C' )
+		else if (str[i] != '1' && str[i] != '0' && str[i] != 'P' \
+			&& str[i] != 'E' && str[i] != 'C' )
 			return (0);
+		if (str[i] == 'P')
+		{
+			map_info->player.x = i;
+			map_info->player.y = side;
+		}
 		count_params(str[i], &map_info);
 		i++;
 	}
 	return (1);
 }
 
-int	check_map_errors(t_map *map_info)
+int	check_map_char_number(t_map *map_info)
 {
-	if (map_info->collect < 1)
+	if (map_info->collectnb < 1)
 		return (0);
-	if (map_info->player != 1)
+	if (map_info->playernb != 1)
 		return (0);
 	if (map_info->exit < 1)
 		return (0);
@@ -102,13 +108,13 @@ int	check_map_char(char *ber, t_map *map_info)
 		free(str);
 		str = get_next_line(fd);
 	}
-	if (!check_map_errors(map_info))
+	if (!check_map_char_number(map_info))
 		return (0);
 	close(fd);
 	return (1);
 }
 
-int get_map_values(char *ber, t_map *map_info)
+int	get_map_values(char *ber, t_map *map_info)
 {
 	int		fd;
 	char	*str;
@@ -139,67 +145,50 @@ int get_map_values(char *ber, t_map *map_info)
 	return (1);
 }
 
-void 	init_struct(t_map *map_info)
+void	init_struct(t_all *a)
 {
-	map_info->x = 0;
-	map_info->y = 0;
-	map_info->player = 0;
-	map_info->collect = 0;
-	map_info->exit = 0;
-	map_info->map = NULL;
+	a->m->x = 0;
+	a->m->y = 0;
+	a->m->playernb = 0;
+	a->m->collectnb = 0;
+	a->m->exit = 0;
+	a->m->map = NULL;
+	a->g->mlx = NULL;
+	a->g->win = NULL;
 }
 
 int	ft_parsing(char *ber, t_map *map_info)
 {
+//	init_struct(a, map_info);
 	if (!get_map_values(ber, map_info))
-	{
-		printf("map_error in values\n");
-		return (0);
-	}
-	if (!check_map_char(ber, map_info))
-	{
-		printf("map_error in char\n");
-		return (0);
-	}
-	if (!init_map(ber, map_info))
-	{
-		printf("map_error in init\n");
-		return (0);
-	}
-	return (1);
+		ft_print_error_msg(map_info, 2);
+	else if (!check_map_char(ber, map_info))
+		ft_print_error_msg(map_info, 3);
+	else if (!init_map(ber, map_info))
+		ft_print_error_msg(map_info, 4);
+	return (0);
 }
 
-int	main(int ac, char **av)
-{
-	t_map map_info;
-
-	init_struct(&map_info);
-	if (!ft_parsing(av[1], &map_info))
-		return (1);
-	printf("Player=%d, Exit=%d Collect=%d\n", map_info.player, map_info.exit, map_info.collect);
-	int i = 0;
-	if (map_info.map)
-	{
-		while (map_info.map[i])
-		{
-			printf("%s\n", map_info.map[i]);
-			i++;
-		}
-	}
-}
-
-//void 	delete_newline(char *ber, int fd)
+//int	main(int ac, char **av)
 //{
-//	char	*str;
-//	char 	*new_str;
-//	int		i;
+//	t_map map_info;
+//	t_game g;
 //
-//	i = 0;
-//	str = get_next_line(fd);
-//	while(str[i] != '\n')
+//	init_struct(&map_info, &g);
+//	if (ft_invalid_arg(ac, av[1]) == 0)
+//		return (0);
+//	if (ft_parsing(av[1], &map_info) != 0)
+//		return (0);
+//	printf("Player=%d, Exit=%d Collect=%d\n", \
+//		map_info.player, map_info.exit, map_info.collect);
+//	int i = 0;
+//	if (map_info.map)
 //	{
-//		new_str[i] = str[i];
-//		i++;
+//		while (map_info.map[i])
+//		{
+//			printf("%s\n", map_info.map[i]);
+//			i++;
+//		}
 //	}
-//	str[i] = '\0';
+//	return (0);
 //}

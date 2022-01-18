@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../incs/get_next_line.h"
 
 static char	*ft_save_rest(char *buffer)
 {
