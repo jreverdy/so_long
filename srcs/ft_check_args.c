@@ -32,13 +32,28 @@ int	ft_invalid_arg(int ac, char *str)
 void	ft_print_error_msg(t_map *map_info, int i)
 {
 	if (i == 0)
-		printf("Invalid arguments\n");
+	{
+		ft_printf("Invalid arguments\n");
+		exit(0);
+	}
 	else if (i == 2)
-		printf("The map is not rectangular\n");
+	{
+		ft_printf("The map is not rectangular\n");
+		exit(0);
+	}
 	else if (i == 3)
-		printf("Wrong char in map\n");
+	{
+		ft_printf("Wrong char in map\n");
+		exit(0);
+	}
 	else if (check_map_char_number(map_info) == 0)
-		printf("There is not at least 1 collectible, 1 player or 1 exit\n");
+	{
+		ft_printf("There is not at least 1 collectible, 1 player or 1 exit\n");
+		exit(0);
+	}
 	else if (i == 4)
-		printf("The init of map has failed\n");
+	{
+		ft_printf("The init of map has failed\n");
+		exit(0);
+	}
 }

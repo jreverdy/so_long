@@ -52,8 +52,9 @@ Mkfile.old
 dkms.conf
 
 #my settings
-
 .idea
+.idea/workspace.xml
 cmake-build-debug
 map.ber
-
+so_long
+.obj/

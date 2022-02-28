@@ -40,13 +40,3 @@ int	ft_print(t_map *map_info, t_image *img, t_game *g)
 	}
 	return (0);
 }
-
-void	print_ep(t_all *a)
-{
-	mlx_put_image_to_window(a->g->mlx, a->g->win, a->img->grass, \
-	a->m->player.x * 32, a->m->player.y * 32);
-	mlx_put_image_to_window(a->g->mlx, a->g->win, a->img->exit, \
-	a->m->player.x * 32, a->m->player.y * 32);
-	mlx_put_image_to_window(a->g->mlx, a->g->win, a->img->pfront, \
-	a->m->player.x * 32, a->m->player.y * 32);
-}

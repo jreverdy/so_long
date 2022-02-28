@@ -45,108 +45,36 @@ void	count_params(char c, t_map **map_info)
 		(*map_info)->collectnb++;
 }
 
-
-int	check_string(char *str, int side, t_map *map_info)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[0] != '1' || str[map_info->x - 1] != '1')
-			return (0);
-		if (side == 0 || side == map_info->y)
-		{
-			if (str[i] != '1')
-				return (0);
-		}
-		else if (str[i] != '1' && str[i] != '0' && str[i] != 'P' \
-			&& str[i] != 'E' && str[i] != 'C' )
-			return (0);
-		if (str[i] == 'P')
-		{
-			map_info->player.x = i;
-			map_info->player.y = side;
-		}
-		count_params(str[i], &map_info);
-		i++;
-	}
-	return (1);
-}
-
-int	check_map_char_number(t_map *map_info)
-{
-	if (map_info->collectnb < 1)
-		return (0);
-	if (map_info->playernb != 1)
-		return (0);
-	if (map_info->exit < 1)
-		return (0);
-	return (1);
-}
-
-int	check_map_char(char *ber, t_map *map_info)
-{
-	int		fd;
-	char	*str;
-	int		i;
-
-	i = 0;
-	fd = open(ber, O_RDONLY);
-	if (fd == -1)
-		return (0);
-	str = get_next_line(fd);
-	while (str)
-	{
-		if (check_string(str, i, map_info) == 0)
-		{
-			free(str);
-			close (fd);
-			return (0);
-		}
-		i++;
-		free(str);
-		str = get_next_line(fd);
-	}
-	if (!check_map_char_number(map_info))
-		return (0);
-	close(fd);
-	return (1);
-}
-
 int	get_map_values(char *ber, t_all *a)
 {
-	int		fd;
-	char	*str;
-	int		save;
-
-	fd = open(ber, O_RDONLY);
-	if (fd == -1)
+	a->v->fd = open(ber, O_RDONLY);
+	if (a->v->fd == -1)
 		return (0);
-	save = -1;
-	str = get_next_line(fd);
-	while (str)
+	a->v->str = get_next_line(a->v->fd);
+	while (a->v->str)
 	{
-		if (save == -1)
-			save = ft_strlen(str);
-		a->m->x = ft_strlen(str);
-		if (a->m->x != save)
+		if (a->v->save == -1)
+			a->v->save = ft_strlen(a->v->str);
+		a->m->x = ft_strlen(a->v->str);
+		if (a->m->x != a->v->save)
 		{
-			free(str);
+			free(a->v->str);
 			return (0);
 		}
 		a->m->y++;
-		free(str);
-		str = get_next_line(fd);
-		if (!str)
+		free(a->v->str);
+		a->v->str = get_next_line(a->v->fd);
+		if (!a->v->str)
 			break ;
 	}
-	close(fd);
+	close(a->v->fd);
 	return (1);
 }
 
 void	init_struct(t_all *a)
 {
+	a->v->save = -1;
+	a->v->fd = 0;
 	a->m->x = 0;
 	a->m->y = 0;
 	a->m->playernb = 0;
@@ -155,10 +83,20 @@ void	init_struct(t_all *a)
 	a->m->map = NULL;
 	a->g->mlx = NULL;
 	a->g->win = NULL;
+	a->m->step = 0;
 }
 
 int	ft_parsing(char *ber, t_all *a)
 {
+	int fd;
+
+	fd = open(ber, O_RDWR);
+	if (fd == -1)
+	{
+		ft_printf("Could not open file\n");
+		exit (0);
+	}
+	close(fd);
 	init_struct(a);
 	if (!get_map_values(ber, a))
 		ft_print_error_msg(a->m, 2);
@@ -168,27 +106,3 @@ int	ft_parsing(char *ber, t_all *a)
 		ft_print_error_msg(a->m, 4);
 	return (0);
 }
-
-//int	main(int ac, char **av)
-//{
-//	t_map map_info;
-//	t_game g;
-//
-//	init_struct(&map_info, &g);
-//	if (ft_invalid_arg(ac, av[1]) == 0)
-//		return (0);
-//	if (ft_parsing(av[1], &map_info) != 0)
-//		return (0);
-//	printf("Player=%d, Exit=%d Collect=%d\n", \
-//		map_info.player, map_info.exit, map_info.collect);
-//	int i = 0;
-//	if (map_info.map)
-//	{
-//		while (map_info.map[i])
-//		{
-//			printf("%s\n", map_info.map[i]);
-//			i++;
-//		}
-//	}
-//	return (0);
-//}

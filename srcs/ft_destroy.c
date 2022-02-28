@@ -22,6 +22,6 @@ int	ft_destroy(t_all *a)
 	mlx_destroy_image(a->g->mlx, a->img->exit);
 	mlx_destroy_window(a->g->mlx, a->g->win);
 	ft_free(a->m);
-	printf("Thanks for playing, Have a nice day :)\n");
+	ft_printf("Thanks for playing, Have a nice day :)\n");
 	exit(0);
 }

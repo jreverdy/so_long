@@ -20,6 +20,7 @@
 # include "../libft/libft.h"
 # include "../incs/get_next_line.h"
 # include "../mlx/mlx.h"
+# include "../ft_printf/incs/ft_printf.h"
 # include <fcntl.h>
 # include <limits.h>
 
@@ -79,11 +80,15 @@ typedef struct s_all
 	t_map	*m;
 	t_game	*g;
 	t_image	*img;
+	t_val	*v;
 }t_all;
 
 int		ft_parsing(char *ber, t_all *a);
 int		check_map_char_number(t_map *map_info);
+int		check_map_char(char *ber, t_map *map_info);
 int 	check_string(char *str, int side, t_map *map_info);
+void	count_params(char c, t_map **map_info);
+void	init_struct(t_all *a);
 
 int 	ft_print(t_map *map_info,t_image *img, t_game *g);
 void 	print_w(t_image *img, t_game *g, int x, int y);
@@ -91,8 +96,6 @@ void 	print_g(t_image *img, t_game *g, int x, int y);
 void 	print_e(t_image *img, t_game *g, int x, int y);
 void 	print_p(t_image *img, t_game *g, int x, int y);
 void 	print_c(t_image *img, t_game *g, int x, int y);
-void	print_ep(t_all *a);
-
 
 int		ft_check_args(char *str);
 void	ft_print_error_msg(t_map *map_info, int i);

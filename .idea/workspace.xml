@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
-  </component>
   <component name="CMakeSettings">
-    <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
-    </configurations>
+    <configurations />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8713d7f-d5c5-453d-91b1-dde3ae362fcd" name="Changes" comment="" />
+    <list default="true" id="3e1ccf48-f346-48cf-8c57-4e5ebcf3fe51" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/maps/invalid.ber" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/invalid2.ber" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/maps/map4.ber" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/srcs/ft_checker.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_printf/incs/ft_printf.h" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf/incs/ft_printf.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ft_printf/srcs/ft_strlen.c" beforeDir="false" afterPath="$PROJECT_DIR$/ft_printf/srcs/ft_strlen.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/incs/so_long.h" beforeDir="false" afterPath="$PROJECT_DIR$/incs/so_long.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/map.ber" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimal.ber" beforeDir="false" afterPath="$PROJECT_DIR$/maps/map3.ber" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/so_long" beforeDir="false" afterPath="$PROJECT_DIR$/so_long" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_check_args.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_check_args.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_destroy.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_destroy.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_exit.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_exit.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_free.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_free.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_movement.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_movement.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_parsing.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_parsing.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/ft_print.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/ft_print.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/srcs/so_long.c" beforeDir="false" afterPath="$PROJECT_DIR$/srcs/so_long.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.ber" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,20 +39,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="22Pk57DecSw2p09NfAr3BGkjrPk" />
+  <component name="ProjectId" id="25k43cm8EWRjguSk6waHLEBfPpx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -42,95 +48,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
-    <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/img" />
-      <recent name="$PROJECT_DIR$/srcs/img" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/srcs" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/incs" />
-      <recent name="$PROJECT_DIR$/srcs/img" />
-      <recent name="$PROJECT_DIR$/trash" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Makefile Target.mlx">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="libft" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/Makefile" target="libft" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
-    </configuration>
-    <configuration name="mlx" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
-      <makefile filename="$PROJECT_DIR$/Makefile" target="mlx" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Makefile Target.mlx" />
-        <item itemvalue="Makefile Target.libft" />
-      </list>
-    </recent_temporary>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="d8713d7f-d5c5-453d-91b1-dde3ae362fcd" name="Changes" comment="" />
-      <created>1639746424305</created>
+      <changelist id="3e1ccf48-f346-48cf-8c57-4e5ebcf3fe51" name="Changes" comment="" />
+      <created>1646057552391</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1639746424305</updated>
-      <workItem from="1639746426706" duration="6787000" />
-      <workItem from="1640003860455" duration="289000" />
-      <workItem from="1640017495702" duration="359000" />
-      <workItem from="1640082467781" duration="616000" />
-      <workItem from="1640089203549" duration="6651000" />
-      <workItem from="1640166249703" duration="1659000" />
-      <workItem from="1640171566144" duration="2000" />
-      <workItem from="1640178422824" duration="5061000" />
-      <workItem from="1640603222332" duration="344000" />
-      <workItem from="1640606853716" duration="12834000" />
-      <workItem from="1640686100455" duration="11946000" />
-      <workItem from="1640773714176" duration="1201000" />
-      <workItem from="1640778739999" duration="3898000" />
-      <workItem from="1640878823650" duration="1334000" />
-      <workItem from="1641203780272" duration="360000" />
-      <workItem from="1641210295171" duration="4625000" />
-      <workItem from="1641226650885" duration="191000" />
-      <workItem from="1641295351441" duration="2000" />
-      <workItem from="1641298172836" duration="8141000" />
-      <workItem from="1641374116874" duration="8102000" />
-      <workItem from="1641394325601" duration="1493000" />
-      <workItem from="1641453372515" duration="1000" />
-      <workItem from="1641456236345" duration="3010000" />
-      <workItem from="1641469711226" duration="2700000" />
-      <workItem from="1641815750258" duration="10368000" />
-      <workItem from="1641893262876" duration="7440000" />
-      <workItem from="1641906755561" duration="3992000" />
-      <workItem from="1642069543272" duration="2001000" />
-      <workItem from="1642075427652" duration="13486000" />
-      <workItem from="1642411267261" duration="4824000" />
-      <workItem from="1642421449471" duration="3565000" />
-      <workItem from="1642429806245" duration="2000" />
-      <workItem from="1642432409268" duration="766000" />
-      <workItem from="1642510691148" duration="4731000" />
+      <updated>1646057552391</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
 </project>

@@ -38,7 +38,6 @@ int	ft_key_hook(int keycode, t_all *a)
 		if (ft_collectible(keycode, a) == 1)
 			ft_exit(keycode, a);
 	}
-	printf("collect = %d\n", a->m->collectnb);
 	if (keycode == 13)
 		ft_move_up(a);
 	else if (keycode == 0)
@@ -51,20 +50,21 @@ int	ft_key_hook(int keycode, t_all *a)
 		ft_destroy(a);
 	ft_print(a->m, a->img, a->g);
 	step = ft_itoa(a->m->step);
-	mlx_string_put(a->g->mlx, a->g->win, 0, 15, 0xff0000, step);
+	mlx_string_put(a->g->mlx, a->g->win, 10, 15, 0xff0000, step);
 	if (step)
 		free(step);
-	printf("Number of steps = %d\n", a->m->step);
 	return (0);
 }
 
 int	main(int ac, char **av)
 {
+	t_val	v;
 	t_map	map_info;
 	t_game	g;
 	t_image	img;
 	t_all	a;
 
+	a.v = &v;
 	a.m = &map_info;
 	a.img = &img;
 	a.g = &g;

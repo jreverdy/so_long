@@ -16,22 +16,22 @@ void	ft_exit(int k, t_all *a)
 {
 	if (k == 13 && a->m->map[a->m->player.y - 1][a->m->player.x] == 'E')
 	{
-		printf("YOU WIN !!!\n");
+		ft_printf("YOU WIN !!!\n");
 		exit(0);
 	}
 	else if (k == 0 && a->m->map[a->m->player.y][a->m->player.x - 1] == 'E')
 	{
-		printf("YOU WIN !!!\n");
+		ft_printf("YOU WIN !!!\n");
 		exit(0);
 	}
 	else if (k == 1 && a->m->map[a->m->player.y + 1][a->m->player.x] == 'E')
 	{
-		printf("YOU WIN !!!\n");
+		ft_printf("YOU WIN !!!\n");
 		exit(0);
 	}
 	else if (k == 2 && a->m->map[a->m->player.y][a->m->player.x + 1] == 'E')
 	{
-		printf("YOU WIN !!!\n");
+		ft_printf("YOU WIN !!!\n");
 		exit(0);
 	}
 	else if (k == 53)
